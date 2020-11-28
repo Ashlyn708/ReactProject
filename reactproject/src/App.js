@@ -15,7 +15,7 @@ class App extends Component {
     render(){
         return (
             <div className="App">
-                <h1>To-do List</h1>
+                <h1 className='App-header'>Thanksgiving To-do List</h1>
                 <form onSubmit={(e) => this.addTodo(e)}>
                     <input
                         type = 'text'

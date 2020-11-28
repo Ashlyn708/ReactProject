@@ -9,7 +9,6 @@ class TaskList extends Component{
             <div>
                 {title}
                 {taskItems}
-               {/* <button onclick= {()=>buttonFunction}>{buttonText}</button> */}
             </div>
         )
     }
