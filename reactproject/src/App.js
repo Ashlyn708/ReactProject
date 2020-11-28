@@ -8,6 +8,7 @@ class App extends Component {
         super()
         this.state = {
             todoList: ['item2','item4'],
+            completeList:['turkey'],
             task:''
         }
     }
@@ -26,7 +27,7 @@ class App extends Component {
                     <button type='submit'>Add Todo</button>
                 </form>
                 <TaskList title={'Pending ToDo'} buttonText={'Done'} tasks={this.state.todoList} buttonFunction={this.removeTodo}/>
-                {<TaskList title={'Completed'} buttonText={'Delete'} tasks={'done'} buttonFunction={this.removeTodo}/>}
+                <TaskList title={'Completed'} buttonText={'Delete'} tasks={this.state.completeList} buttonFunction={this.deleteTodo}/>
             </div>
         );
     }
@@ -45,7 +46,9 @@ class App extends Component {
         let index = todoList.indexOf(key);
         if(index>-1){
             todoList.splice(index,1);
-            this.setState({todoList:todoList})    
+            this.setState({todoList:todoList});
+            this.setState({completeList:[ ...this.state.completeList,key]});
+   
         }
     }
        // if(this.state.todoList!=null){
@@ -54,7 +57,14 @@ class App extends Component {
       //  }
 
     deleteTodo = key =>{
-        console.log(key)
+        console.log(key);
+        let completeList =  this.state.completeList;
+        let index = completeList.indexOf(key);
+        if(index>-1){
+            completeList.splice(index,1);
+            this.setState({completeList:completeList});
+   
+        }
     }
 }
 
