@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import turkey from './turkey.jpg';
 import './App.css';
 import TaskList from './TasksList';
 
@@ -7,8 +8,8 @@ class App extends Component {
     constructor(){
         super()
         this.state = {
-            todoList: ['item2','item4'],
-            completeList:['turkey'],
+            todoList: ['cook Mac n Cheese','take pictures'],
+            completeList:['stuff turkey'],
             task:''
         }
     }
@@ -16,6 +17,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1 className='App-header'>Thanksgiving To-do List</h1>
+                <img className = 'turkeypic' src={turkey} alt='turkey pic'/>
                 <form onSubmit={(e) => this.addTodo(e)}>
                     <input
                         type = 'text'
@@ -24,10 +26,10 @@ class App extends Component {
                         value = {this.state.task}
                         onChange = {(e)=> this.setState({task:e.target.value})}
                     />
-                    <button type='submit'>Add Todo</button>
+                    <button className='button' type='submit'>Add Todo</button>
                 </form>
-                <TaskList title={'Pending ToDo'} buttonText={'Done'} tasks={this.state.todoList} buttonFunction={this.removeTodo}/>
-                <TaskList title={'Completed'} buttonText={'Delete'} tasks={this.state.completeList} buttonFunction={this.deleteTodo}/>
+                <TaskList title={'Pending Task:'} buttonText={'Done'} tasks={this.state.todoList} buttonFunction={this.removeTodo}/>
+                <TaskList title={'Completed Task:'} buttonText={'Delete'} tasks={this.state.completeList} buttonFunction={this.deleteTodo}/>
             </div>
         );
     }

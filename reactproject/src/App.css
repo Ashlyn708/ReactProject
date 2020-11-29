@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background:#d45b12;
+  font-size: large;
   margin:auto;
   max-width: 1200px;
   border-radius: 15px 50px;
@@ -24,11 +25,36 @@
   color:#F3BC2e;
   border-radius: 15px 50px;
   padding: 20px;
-  image: '..public/turkey.jpg';
+   
+}
+
+.turkeypic{
+    width:40%;
+    height:40%;
+    border-color:#9c2706;
+    border-width: thick;
+    
+}
+.input{
+    font-size:large;
+}
+
+.button{
+    font-size:large;
+    background: #9c2706;
+}
+
+h3{
+    margin-block-end: 0em;
 }
 
 body{  
     background-color: #603c14;   
+}
+
+p{
+    font-size: large;
+    font-weight: 450;
 }
 
 .App-link {
